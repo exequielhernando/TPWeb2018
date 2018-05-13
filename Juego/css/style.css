@@ -6,6 +6,14 @@
   font-size-adjust: auto;
   text-align: center;
 }
+.subtitulo{
+  height: 100%;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1em;
+  font-size-adjust: auto;
+  text-align: center;
+}
 .tablero.carta{
    display: inline;
 
@@ -18,14 +26,17 @@
 }
 .cuadrado-negro{
   background-image: url("../images/cuadrado-negro.jpg");
+
 }
 .cartaSinMarca{
-  background-color: white;
- /* background-image: url("../images/gohan1.png");*/
+  background-image: url("../images/gohan1.png");
+  background-size: cover;
+  background-color: solid;
 }
 .cartaConMarca{
-  background-color: red;
-  /*background-image: url("../images/gohan2.png");*/
+  background-image: url("../images/gohan2.png");
+  background-size: cover;
+  background: solid;
 }
 .fondoAcierto{
   background-image: url("../images/gohan2.png");
