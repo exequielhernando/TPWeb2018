@@ -8,6 +8,7 @@
 }
 .tablero.carta{
    display: inline;
+
 }
 .carta{
   float: left;
@@ -15,7 +16,6 @@
   height: 18em;
   width: 18em;
 }
-
 .cuadrado-negro{
   background-image: url("../images/cuadrado-negro.jpg");
 }
@@ -27,7 +27,21 @@
   background-color: red;
   /*background-image: url("../images/gohan2.png");*/
 }
-
+.fondoAcierto{
+  background-image: url("../images/gohan2.png");
+}
+.ganaste{
+  background-image: url("../images/ganaste.jpg");
+  position: relative ;
+  top: 50%;
+  left: 25%;
+  height: 38em;
+  width: 50%;
+  align-items: center;
+}
+.oculto {
+  display: none;
+}
 .boton-comenzar{
   clear: both;
   text-align: center;
