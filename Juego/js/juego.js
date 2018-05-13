@@ -10,6 +10,7 @@ const sinMarca = "cartaSinMarca";
 const conMarca = "cartaConMarca";
 const arrLength = 8;
 const fondoAcierto = "fondoAcierto";
+const fondoError = "fondoError";
 const fondoGanaste = "ganaste";
 const fondoOculto = "oculto";
 let marcadas;
@@ -23,6 +24,16 @@ let cantidadpartidas=0;
 function azarcartas() {
   return Math.floor(Math.random() * (2)+ 1);
 }
+function azarUltimaCarta(){
+   let numero =Math.floor(Math.random() * (10) + 1);
+   if(numero <= 8){
+     numero = 2;
+   }
+   else {
+     numero = 1;
+   }
+   return numero;
+}
 
 function generarCartas(){
   canterrorespartida = 0;
@@ -34,9 +45,15 @@ function generarCartas(){
   mostrarErrores();
   mostrarAciertos();
   mostrarPartidas();
+  cambiarFondoNuevaPartida();
   let azarCarta;
   for (let i = 0; i < 8; i++) {
-    azarCarta = azarcartas();
+    if (i === 7) {
+      azarCarta = azarUltimaCarta();
+    }
+    else {
+      azarCarta = azarcartas();
+    }
     if(azarCarta === 2){
       marcadas++;
     }
@@ -80,6 +97,7 @@ function Verificar(cartaActual){
       canterrorespartida++;
       canterrorestotales++;
       mostrarErrores();
+      cambiarFondoError();
       cartaActual= document.getElementById(cartaelegida);
       cartaActual.className = "carta " + sinMarca;
       setTimeout(function functionName() {
@@ -94,6 +112,7 @@ function Verificar(cartaActual){
         cartaActual.className = "carta " + conMarca;
         mostrarAciertos();
         mostrarAciertosTotales();
+        cambiarFondoAcierto();
         if(marcadas===0){
           mostrarMensajeGanaste();
         }
@@ -133,7 +152,15 @@ function mostrarTablero() {
   let mensaje2 = document.getElementById("ganaste");
   mensaje2.className =  "";
 }
-function cambiarfondo(){
-  let fondoimagen = getElementById("");
-  fondoimagen.className = "hola fondoAcierto";
+function cambiarFondoAcierto(){
+  let fondo = document.getElementById("fondo");
+  fondo.className = fondoAcierto ;
+}
+function cambiarFondoError(){
+  let fondo = document.getElementById("fondo");
+  fondo.className = fondoError ;
+}
+function cambiarFondoNuevaPartida(){
+  let fondo = document.getElementById("fondo");
+  fondo.className = "" ;
 }

@@ -30,6 +30,9 @@
 .fondoAcierto{
   background-image: url("../images/gohan2.png");
 }
+.fondoError{
+  background-image: url("../images/gohan1.png");
+}
 .ganaste{
   background-image: url("../images/ganaste.jpg");
   position: relative ;
@@ -39,6 +42,7 @@
   width: 50%;
   align-items: center;
 }
+
 .oculto {
   display: none;
 }
